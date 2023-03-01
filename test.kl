@@ -1,0 +1,42 @@
+import java.util.*
+
+fun main() {
+    val scanner = Scanner(System.`in`)
+    var score = 0
+
+    // Array de perguntas e respostas
+    val questions = arrayOf(
+        "1. Qual é a importância de fazer um orçamento pessoal?\n" +
+                "a) Controlar os gastos\n" +
+                "b) Ganhar mais dinheiro\n" +
+                "c) Comprar mais coisas\n",
+        "2. O que é a taxa Selic?\n" +
+                "a) A taxa de juros cobrada pelos bancos\n" +
+                "b) A taxa de juros paga pelo governo para emitir títulos\n" +
+                "c) A taxa de juros que os bancos pagam para captar dinheiro\n",
+        "3. Qual é a diferença entre uma ação e um fundo de investimento?\n" +
+                "a) As ações são mais arriscadas\n" +
+                "b) Os fundos de investimento são mais rentáveis\n" +
+                "c) As ações são uma participação em uma empresa, enquanto os fundos são uma carteira de investimentos\n"
+    )
+
+    // Array de respostas corretas
+    val answers = arrayOf("a", "b", "c")
+
+    // Loop pelas perguntas
+    for (i in questions.indices) {
+        println(questions[i])
+        val userAnswer = scanner.nextLine()
+
+        // Verifica se a resposta do usuário está correta
+        if (userAnswer == answers[i]) {
+            println("Resposta correta!")
+            score++
+        } else {
+            println("Resposta incorreta!")
+        }
+    }
+
+    // Mostra a pontuação final
+    println("Você acertou $score de ${questions.size} perguntas.")
+}
